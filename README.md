@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=header&text=Base64&fontSize=30&fontAlign=80)
 
 # Image-to-Base64
-Application to convert imagest into base64 format. Written in HTML, JS, CSS
+Application to convert images into base64 format. Written in HTML, JS, CSS
 
 <img src="screen1.jpg" width="500px">
 
