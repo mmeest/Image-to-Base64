@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img to BASE64</title>
+    <style>
+        body{
+            background-color: rgb(203, 241, 159);
+            vertical-align: top;
+            text-align: center;
+        }
+        button{
+            padding: 14px;
+            border-radius: 50%;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: larger;
+            color: antiquewhite;
+            background-color: rgb(3, 63, 63);
+            margin: 20px;
+        }
+    </style>
+</head>
+<body onload="setImageSize()">
+    <br>
+    <img src="avatar.jpg" id="img" alt="">
+    <textarea name="" id="result" cols="50" rows="26"></textarea><br>
+    <button onclick="copy()">Copy textarea<br> to Clipboard</button>
+
+    <script>
+        // function for resizing large images
+        function setImageSize(){
+            var img = document.getElementById('img')
+            var x = screen.width / 3
+            var y = img.width / x
+            var z = img.height / y
+            console.log(x.toString() + 'px')
+            console.log(y.toString())
+            console.log(z.toString())
+
+            img.style.width = x.toString() + 'px'
+            img.style.height = z.toString() + 'px'
+        }
+
+        var img = document.getElementById('img')
+        img.crossOrigin = 'Anonymus'
+        img.onload = function(){
+            var x = screen.width / 2
+            var y = img.width / x
+            var z = img.height * y
+            console.log(x)
+            console.log(y)
+            console.log(z)
+
+            var canvas = document.createElement('canvas')
+            var ctx = canvas. getContext('2d')
+            canvas.height = this.naturalHeight
+            canvas.width = this.naturalWidth
+            ctx.drawImage(this,0,0)
+            var data = canvas.toDataURL('image/jpeg')
+            document.getElementById('result').value = data
+        }
+
+        function copy() {
+            let textarea = document.getElementById("result");
+            textarea.select();
+            document.execCommand("copy");
+        }
+    </script>
+</body>
+</html>
