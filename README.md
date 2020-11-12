@@ -1,6 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=header&text=Base64&fontSize=30&fontAlign=80)
 
-<img src="screen1.jpg" widht="500px">
 <img src="screen1.jpg" width="500px">
 
 # Image-to-Base64
